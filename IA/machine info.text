@@ -1,0 +1,51 @@
+Sugere-se ter um ambiente virtual dedicado para cada projeto Django, e uma maneira de gerenciar um ambiente virtual é venv, que está incluído no Python.
+
+O nome do ambiente virtual é sua escolha, neste tutorial vamos chamá-lo de .myworld
+
+Digite o seguinte no prompt de comando, lembre-se de navegar até Onde você deseja criar seu projeto:
+
+Windows:
+
+,py -m venv () 'nome do projeto'
+
+,django-admin startproject my_tennis_club
+
+
+
+
+
+'''''''''''''''''''''''
+Meu Primeiro Projeto
+Depois de chegar a ,um nome adequado para o seu projeto Django, como mine: 
+navegue até onde no arquivo sistema que você deseja armazenar o código (no ambiente virtual)
+Vou, navegar até a pasta e executar este comando no prompt de comando:my_tennis_clubmyworld
+
+django-admin startproject my_tennis_club
+O Django cria uma pasta no meu computador, com este conteúdo:my_tennis_club
+
+my_tennis_club
+    manage.py
+    my_tennis_club/
+        __init__.py
+        asgi.py
+        settings.py
+        urls.py
+        wsgi.py
+Estes são todos os arquivos e pastas com um significado específico, 
+você vai aprender sobre alguns deles mais adiante neste tutorial, 
+mas por enquanto, é mais importante saber que este é o local do seu projeto,Criar aplicativo
+
+''''''''''''''''''''
+
+Criar, aplicativo
+Vou nomear meu aplicativo, .members
+
+Comece navegando até o local selecionado onde você deseja armazenar o aplicativo, no meu caso a pasta, e execute o comando abaixo.my_tennis_club
+
+Se o servidor ainda estiver em execução e você não conseguir escrever comandos, pressione [CTRL] [BREAK] ou [CTRL] [C] para parar o servidor e você deve estar de volta no virtual ambiente.
+
+,py manage.py startapp members
+''''''''''''''''''
+
+myworld) C:\Users\Your Name>django-admin --version
+
