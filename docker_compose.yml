@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: POSTGRES_db
+    restart: always 
+    environment:
+      POSTGRES_USER = admin
+      POSTGRES_PASSWORD = admin21
+      POSTGRES_DB = pedidos
+    ports:
+      - "5432:5432"
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5676:5676"
+      - "15672:15672"
+  pedido_service:
+    build: ./pedido_service
+    container_name: pedido_service
+    depends_on:
+      - db
+      - rabbitmq
+    ports:
+      -"8000:8000"
+  processador_service:
+    build: ./processador_service
+    container_name: processador_service
+    depends_on:
+      - db
+      - rabbitmq
