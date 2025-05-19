@@ -5,13 +5,26 @@ import (
 	"net/http"
 )
 
-func requeda(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(w, "servidor inciado...")
+// Rota: /
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Servidor iniciado")
+}
 
+// Rota: /hello
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Olá Mundo")
+}
+
+// Rota: /about
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Este é um servidor em Go")
 }
 
 func main() {
-	http.HandleFunc("/", requeda)
-	http.ListenAndServe(":8000", nil)
+	http.HandleFunc("/", homeHandler)
+	http.HandleFunc("/hello", helloHandler)
+	http.HandleFunc("/about", aboutHandler)
 
+	fmt.Println("Servidor iniciado em http://localhost:8080")
+	http.ListenAndServe(":8080", nil)
 }
